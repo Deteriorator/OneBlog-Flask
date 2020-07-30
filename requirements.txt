@@ -4,3 +4,4 @@ Werkzeug==1.0.1
 flask-sqlacodegen==1.1.7
 pymysql==0.10.0
 SQLAlchemy==1.1.5
+flask-sqlalchemy==2.4.4

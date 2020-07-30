@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 -------------------------------------------------------------------------------
-   @Name：    app.py
+   @Name:     app.py
    @Desc:     
    @Author:   liangz.org@gmail.com
    @Create:   2020.07.24   17:51
