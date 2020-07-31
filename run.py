@@ -2,25 +2,21 @@
 # -*- coding: utf-8 -*-
 """
 -------------------------------------------------------------------------------
-   @Name:     app.py
+   @Name:     run.py
    @Desc:     
    @Author:   liangz.org@gmail.com
-   @Create:   2020.07.24   17:51
+   @Create:   2020.07.31   21:42
 -------------------------------------------------------------------------------
-   @Change:   2020.07.24
+   @Change:   2020.07.31
 -------------------------------------------------------------------------------
 """
-
-from flask import Flask
+from app import create_app
 from config import Config
 
-
-def create_app():
-    app = Flask(__name__)
-    configure_app(app)
-    return app
+app = create_app()
 
 
-def configure_app(app, config=Config):
-    app.config.from_object(config)
+if __name__ == "__main__":
+    app.run(debug=Config.DEBUG)
+
 
