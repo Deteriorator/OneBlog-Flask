@@ -24,8 +24,6 @@ def create_app():
     configure_app(application)
     db.init_app(application)
     application.register_blueprint(main)
-    print(application.register_blueprint(main))
-
     return application
 
 

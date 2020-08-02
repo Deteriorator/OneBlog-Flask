@@ -10,9 +10,8 @@
    @Change:   2020.08.02
 -------------------------------------------------------------------------------
 """
-from flask import Blueprint
 
-main = Blueprint('main', __name__)
+from apps.main import main
 
 
 @main.route('/')
