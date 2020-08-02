@@ -10,10 +10,11 @@
    @Change:   2020.08.02
 -------------------------------------------------------------------------------
 """
+from flask import Blueprint
 
-from apps.main import main
+main = Blueprint('main', __name__)
 
 
 @main.route('/')
-def index():
+def home():
     return '<h1>Hello World!</h1>'

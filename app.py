@@ -13,14 +13,23 @@
 
 from flask import Flask
 from config import Config
+from flask_sqlalchemy import SQLAlchemy
+from apps.main.views import main
+
+db = SQLAlchemy()
 
 
 def create_app():
-    app = Flask(__name__)
-    configure_app(app)
-    return app
+    application = Flask(__name__)
+    configure_app(application)
+    db.init_app(application)
+    application.register_blueprint(main)
+    print(application.register_blueprint(main))
+
+    return application
 
 
 def configure_app(app, config=Config):
     app.config.from_object(config)
+
 
