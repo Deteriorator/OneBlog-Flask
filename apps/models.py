@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
-class WpCommentmeta(db.Model):
+class Commentmeta(db.Model):
     __tablename__ = 'wp_commentmeta'
 
     meta_id = db.Column(db.BigInteger, primary_key=True)
@@ -14,7 +14,7 @@ class WpCommentmeta(db.Model):
     meta_value = db.Column(db.String(collation='utf8mb4_unicode_ci'))
 
 
-class WpComment(db.Model):
+class Comment(db.Model):
     __tablename__ = 'wp_comments'
     __table_args__ = (
         db.Index('comment_approved_date_gmt', 'comment_approved', 'comment_date_gmt'),
@@ -47,7 +47,7 @@ class WpComment(db.Model):
     comment_mail_notify = db.Column(db.Integer, nullable=False, server_default=db.FetchedValue())
 
 
-class WpLink(db.Model):
+class Link(db.Model):
     __tablename__ = 'wp_links'
 
     link_id = db.Column(db.BigInteger, primary_key=True)
@@ -73,22 +73,7 @@ class WpLink(db.Model):
                          server_default=db.FetchedValue())
 
 
-class WpMsSnippet(db.Model):
-    __tablename__ = 'wp_ms_snippets'
-
-    id = db.Column(db.BigInteger, primary_key=True)
-    name = db.Column(db.String(collation='utf8mb4_unicode_520_ci'), nullable=False)
-    description = db.Column(db.Text(collation='utf8mb4_unicode_520_ci'), nullable=False)
-    code = db.Column(db.String(collation='utf8mb4_unicode_520_ci'), nullable=False)
-    tags = db.Column(db.String(collation='utf8mb4_unicode_520_ci'), nullable=False)
-    scope = db.Column(db.String(15, 'utf8mb4_unicode_520_ci'), nullable=False,
-                      server_default=db.FetchedValue())
-    priority = db.Column(db.SmallInteger, nullable=False, server_default=db.FetchedValue())
-    active = db.Column(db.Integer, nullable=False, server_default=db.FetchedValue())
-    modified = db.Column(db.DateTime, nullable=False, server_default=db.FetchedValue())
-
-
-class WpOption(db.Model):
+class Option(db.Model):
     __tablename__ = 'wp_options'
 
     option_id = db.Column(db.BigInteger, primary_key=True)
@@ -99,7 +84,7 @@ class WpOption(db.Model):
                          server_default=db.FetchedValue())
 
 
-class WpPostmeta(db.Model):
+class Postmeta(db.Model):
     __tablename__ = 'wp_postmeta'
 
     meta_id = db.Column(db.BigInteger, primary_key=True)
@@ -109,7 +94,7 @@ class WpPostmeta(db.Model):
     meta_value = db.Column(db.String(collation='utf8mb4_unicode_ci'))
 
 
-class WpPost(db.Model):
+class Post(db.Model):
     __tablename__ = 'wp_posts'
     __table_args__ = (
         db.Index('type_status_date', 'post_type', 'post_status', 'post_date', 'ID'),
@@ -150,38 +135,7 @@ class WpPost(db.Model):
     comment_count = db.Column(db.BigInteger, nullable=False, server_default=db.FetchedValue())
 
 
-class WpQ2w3IncManager(db.Model):
-    __tablename__ = 'wp_q2w3_inc_manager'
-
-    id = db.Column(db.Integer, primary_key=True)
-    description = db.Column(db.String(255), nullable=False)
-    status = db.Column(db.Integer, nullable=False)
-    location = db.Column(db.Integer, nullable=False)
-    widget_title = db.Column(db.String(255))
-    priority = db.Column(db.Integer)
-    inc_pages = db.Column(db.Text, nullable=False)
-    exc_pages = db.Column(db.Text)
-    hide_from_admin = db.Column(db.Text)
-    code_align = db.Column(db.Integer)
-    code = db.Column(db.Text, nullable=False)
-
-
-class WpSnippet(db.Model):
-    __tablename__ = 'wp_snippets'
-
-    id = db.Column(db.BigInteger, primary_key=True)
-    name = db.Column(db.String(collation='utf8mb4_unicode_520_ci'), nullable=False)
-    description = db.Column(db.Text(collation='utf8mb4_unicode_520_ci'), nullable=False)
-    code = db.Column(db.String(collation='utf8mb4_unicode_520_ci'), nullable=False)
-    tags = db.Column(db.String(collation='utf8mb4_unicode_520_ci'), nullable=False)
-    scope = db.Column(db.String(15, 'utf8mb4_unicode_520_ci'), nullable=False,
-                      server_default=db.FetchedValue())
-    priority = db.Column(db.SmallInteger, nullable=False, server_default=db.FetchedValue())
-    active = db.Column(db.Integer, nullable=False, server_default=db.FetchedValue())
-    modified = db.Column(db.DateTime, nullable=False, server_default=db.FetchedValue())
-
-
-class WpTermRelationship(db.Model):
+class TermRelationship(db.Model):
     __tablename__ = 'wp_term_relationships'
 
     object_id = db.Column(db.BigInteger, primary_key=True, nullable=False,
@@ -191,7 +145,7 @@ class WpTermRelationship(db.Model):
     term_order = db.Column(db.Integer, nullable=False, server_default=db.FetchedValue())
 
 
-class WpTermTaxonomy(db.Model):
+class TermTaxonomy(db.Model):
     __tablename__ = 'wp_term_taxonomy'
     __table_args__ = (
         db.Index('term_id_taxonomy', 'term_id', 'taxonomy'),
@@ -206,7 +160,7 @@ class WpTermTaxonomy(db.Model):
     count = db.Column(db.BigInteger, nullable=False, server_default=db.FetchedValue())
 
 
-class WpTermmeta(db.Model):
+class Termmeta(db.Model):
     __tablename__ = 'wp_termmeta'
 
     meta_id = db.Column(db.BigInteger, primary_key=True)
@@ -216,7 +170,7 @@ class WpTermmeta(db.Model):
     meta_value = db.Column(db.String(collation='utf8mb4_unicode_ci'))
 
 
-class WpTerm(db.Model):
+class Term(db.Model):
     __tablename__ = 'wp_terms'
 
     term_id = db.Column(db.BigInteger, primary_key=True)
@@ -227,7 +181,7 @@ class WpTerm(db.Model):
     term_group = db.Column(db.BigInteger, nullable=False, server_default=db.FetchedValue())
 
 
-class WpUsermeta(db.Model):
+class Usermeta(db.Model):
     __tablename__ = 'wp_usermeta'
 
     umeta_id = db.Column(db.BigInteger, primary_key=True)
@@ -237,7 +191,7 @@ class WpUsermeta(db.Model):
     meta_value = db.Column(db.String(collation='utf8mb4_unicode_ci'))
 
 
-class WpUser(db.Model):
+class User(db.Model):
     __tablename__ = 'wp_users'
 
     ID = db.Column(db.BigInteger, primary_key=True)
