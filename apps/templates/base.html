@@ -1,10 +1,414 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>{{ article }}</title>
+    <link rel="dns-prefetch" href="//apps.bdimg.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-title" content="飘零博客">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <title>飘零博客 | 一个关于技术与生活的家园</title>
+    <meta name="description" content="一个关于技术与生活的家园"/>
+    <link rel="canonical" href="http://www.liangz.org/" />
+    <link rel="next" href="http://www.liangz.org/page/2" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="飘零博客 | 一个关于技术与生活的家园" />
+    <meta property="og:description" content="一个关于技术与生活的家园" />
+    <meta property="og:url" content="http://www.liangz.org/" />
+    <!-- / Yoast SEO plugin. -->
+
+    <link rel='dns-prefetch' href='//s.w.org' />
+    <link rel='stylesheet' id='_bootstrap-css'  href="{{ url_for('static', filename='css/bootstrap.min.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='_fontawesome-css'  href="{{ url_for('static', filename='css/font-awesome.min.css')}}" type='text/css' media='all' />
+    <link href="{{ url_for('static', filename='css/main.css')}}?ver=5.2" rel="stylesheet" id="_main-css" type='text/css' media='all'>
+    <script type='text/javascript' src="{{ url_for('static', filename='js/libs/jquery.min.js') }}"></script>
+    <link rel='https://api.w.org/' href='http://www.liangz.org/wp-json/' />
+    <!-- Analytics by WP-Statistics v12.6.13 - https://wp-statistics.com/ -->
+    <meta name="keywords" content="一个关于技术与生活的家园">
+    <meta name="description" content="本站是一个高端大气上档次的网站">
+    <link rel="shortcut icon" href="http://www.liangz.org/favicon.ico">
+    <!--[if lt IE 9]><script src="http://www.liangz.org/wp-content/themes/dux/js/libs/html5.min.js"></script><![endif]-->
+
+    <script type="text/javascript">
+        jQuery(document).ready(
+            function(jQuery){
+                jQuery('.collapseButton').click(
+                    function(){
+                        jQuery(this).parent().parent().find('.xContent').slideToggle('slow');
+                    }
+                );
+            }
+        );
+    </script>
 </head>
-<body>
-    {{ article }}
+
+<body class="home blog logged-in nav_fixed m-excerpt-cat m-excerpt-time logged-admin site-layout-2 text-justify-on">
+<header class="header">
+    <div class="container">
+        <h1 class="logo">
+            <a href="http://www.liangz.org" title="飘零博客-一个关于技术与生活的家园">
+                <img src="http://medias.liangz.org/wp-content/uploads/2017/07/LOGO.png" alt="飘零博客-一个关于技术与生活的家园">
+                飘零博客
+            </a>
+        </h1>
+        <div class="brand">
+            欢迎光临！<br>若无相欠，怎会相见
+        </div>
+        <ul class="site-nav site-navbar">
+        <li id="menu-item-64" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-64"><a href="http://www.liangz.org/">网站首页</a></li>
+        <li id="menu-item-117" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-117"><a href="http://www.liangz.org/sort/study">学无止境</a>
+            <ul class="sub-menu">
+                <li id="menu-item-557" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-557"><a href="http://www.liangz.org/sort/study/windows">Windows</a></li>
+                <li id="menu-item-187" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-187"><a href="http://www.liangz.org/sort/study/wordpress">WordPress</a></li>
+                <li id="menu-item-558" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-558"><a href="http://www.liangz.org/sort/study/linux">Linux</a></li>
+                <li id="menu-item-120" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-120"><a href="http://www.liangz.org/sort/study/languages">编程语言</a></li>
+                <li id="menu-item-559" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-559"><a href="http://www.liangz.org/sort/study/hack">黑客技术</a></li>
+            </ul>
+        </li>
+        <li id="menu-item-73" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-73"><a href="http://www.liangz.org/sort/resource">资源分享</a>
+            <ul class="sub-menu">
+                <li id="menu-item-87" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-87"><a href="http://www.liangz.org/sort/resource/software">软件分享</a></li>
+                <li id="menu-item-96" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-96"><a href="http://www.liangz.org/sort/resource/documents">文档分享</a></li>
+            </ul>
+        </li>
+        <li id="menu-item-66" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-66"><a href="http://www.liangz.org/sort/everthing">谈天说地</a>
+            <ul class="sub-menu">
+                <li id="menu-item-86" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-86"><a href="http://www.liangz.org/sort/everthing/essaylog">随笔日志</a></li>
+                <li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-70"><a href="http://www.liangz.org/memory">备忘录</a></li>
+                <li id="menu-item-693" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-693"><a href="http://www.liangz.org/about-me">关于我</a></li>
+            </ul>
+        </li>
+        <li id="menu-item-312" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-312"><a href="http://www.liangz.org/opensource">开源项目</a></li>
+        <li id="menu-item-613" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-613"><a href="http://www.liangz.org/express">微言微语</a></li>
+        <li id="menu-item-430" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-430"><a target="_blank" href="http://git.liangz.org">代码仓库</a></li>
+        <li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313"><a href="http://www.liangz.org/messageboard">留言板</a></li>
+        <li class="navto-search"><a href="javascript:;" class="search-show active"><i class="fa fa-search"></i></a></li>
+    </ul>
+        <div class="topbar">
+            <ul class="site-nav topmenu">
+                <li id="menu-item-431" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-431"><a>知识库</a></li>
+                <li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="http://www.liangz.org/hottags">热门标签</a></li>
+                <li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="http://www.liangz.org/friendlinks">友情链接</a></li>
+                <li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="http://www.liangz.org/changelog">更新记录</a></li>
+                <li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="http://www.liangz.org/about">关于本站</a></li>
+                <li class="menusns">
+                    <a href="javascript:;">关注我们 <i class="fa fa-angle-down"></i></a>
+                    <ul class="sub-menu">
+                        <li><a class="sns-wechat" href="javascript:;" title="飘零博客" data-src="http://www.liangz.org/wp-content/uploads/2017/07/qrcode_for_gh_025dd86746bf_258.jpg">飘零博客</a></li>											</ul>
+                </li>
+            </ul>
+            Hi, Darker									&nbsp; &nbsp; <a href="http://www.liangz.org/user">进入会员中心</a>
+            &nbsp; &nbsp; <a target="_blank" href="http://www.liangz.org/wp-admin/">后台管理</a>
+        </div>
+        <i class="fa fa-bars m-icon-nav"></i>
+    </div>
+</header>
+
+<div class="site-search">
+    <div class="container">
+        <form method="get" class="site-search-form" action="http://www.liangz.org/" ><input class="search-input" name="s" type="text" placeholder="输入关键字" value=""><button class="search-btn" type="submit"><i class="fa fa-search"></i></button></form>	</div>
+</div>
+<section class="container">
+    <div class="content-wrap">
+        <div class="content">
+            <div id="focusslide" class="carousel slide" data-ride="carousel"><ol class="carousel-indicators"><li data-target="#focusslide" data-slide-to="0" class="active"></li></ol><div class="carousel-inner" role="listbox"><div class="item active"><a target="_blank" href="http://www.liangz.org"><img src="http://www.liangz.org/wp-content/uploads/2017/06/fe01735274.jpg"><span class="carousel-caption">唯美图片</span></a></div></div><a class="left carousel-control" href="#focusslide" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a><a class="right carousel-control" href="#focusslide" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a></div>				<article class="excerpt-minic excerpt-minic-index"><h2><a target="_blank" class="red" href="http://www.liangz.org/sort/recommend">【站长推荐】</a> <a href="http://www.liangz.org/424.html" title="神器&#8211;磁盘目录大小排序软件TreeSize-飘零博客">神器&#8211;磁盘目录大小排序软件TreeSize</a></h2><p class="note">TreeSize简介 硬盘空间回收器,它能够显示文件大小和实际占空间数及其浪费的空间等,让你做出相应的删除决定. 此乃神器 就拿我而言，以网上之言，我已患有绝症。晚期收藏癌，晚期松鼠癌症（ps:松鼠喜欢收藏东西）。 收藏是需要Money的，...</p></article>
+            <!--自定义文章列表-->
+            <!-- 自定义文章列表模块 -->
+            <section>
+                <div class=title><h3>特别推荐</h3></div>	<div class="qgg_diy_postlist">
+                <div style="list-style: none;">
+                    <li><span class="qgg_diy_postlist_lable">特别推荐</span>&nbsp&nbsp</li>		</div>
+            </div>
+            </section>
+            <!--热门文章排行-->
+            <div class="most-comment-posts">
+                <div class="title"><h3>热门排行</h3></div>
+                <div class="mpc-bg"><ul><li>暂无最多阅读文章！</li></ul></div>
+            </div>
+            <div class="title">
+                <h3>
+                    最新发布							</h3>
+                <div class="more"><a href="http://www.liangz.org/75.html" target="_blank">Snipaste</a><a href="http://www.liangz.org/248.html" target="_blank">Mem Reduct</a><a href="http://www.liangz.org/288.html" target="_blank">Cmder</a><a href="链接地址">显示文字</a></div>		</div>
+            <article class="excerpt excerpt-1"><a target="_blank" class="focus" href="http://www.liangz.org/755.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2020/05/delphi.png" alt="Delphi-改进获取文件MD5 Hash方法-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/study/languages/delphi">Delphi<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/755.html" title="Delphi-改进获取文件MD5 Hash方法-飘零博客">Delphi-改进获取文件MD5 Hash方法</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2020-07-26</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(35)</span><a class="pc" href="http://www.liangz.org/755.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="755"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 之前所说的获取文件MD5方法有性能问题，没多久我就遇到了，程序假死，卡顿。因此将获取文件MD5的方法改了一下，并测试了一下，大概性能提升了5倍，获取同一个文件的MD5，老方法用时是新方法的6倍。 改进 原始获取文件MD5的方法： //...</p></article><article class="excerpt excerpt-2"><a target="_blank" class="focus" href="http://www.liangz.org/728.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2020/07/s-20200709-224008.png" alt="使用 Gitea 搭建私有 Git 服务器-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/resource/%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88">解决方案<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/728.html" title="使用 Gitea 搭建私有 Git 服务器-飘零博客">使用 Gitea 搭建私有 Git 服务器</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2020-07-09</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(72)</span><a class="pc" href="http://www.liangz.org/728.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="728"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 之前腾讯云做活动的时候，入手了一台288元3年的Windows服务器，当时没想到具体要做什么，就闲置了一个多月，终于想起来它的用处了，搭建一个私有 Git 服务器。 主要还是存一些可能不好的（涉及版权问题的代码），因为之前我在 Git...</p></article><article class="excerpt excerpt-3"><a target="_blank" class="focus" href="http://www.liangz.org/721.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2020/05/delphi.png" alt="Delphi-解决数据库Text字段显示为(WIDEMEMO)-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/resource/%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88">解决方案<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/721.html" title="Delphi-解决数据库Text字段显示为(WIDEMEMO)-飘零博客">Delphi-解决数据库Text字段显示为(WIDEMEMO)</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2020-06-14</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(160)</span><a class="pc" href="http://www.liangz.org/721.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="721"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 这周末，在完善自己的idea，但是在读取数据库时发现，数据库中的Text字段显示的是(WIDEMEMO)，并不是真实的数据，全部被掩盖了（如下图），通过网络查找资料，还好解决了这个问题。 方案 通过查找资料，解决办法也挺简单的，将上述...</p></article><article class="excerpt excerpt-4"><a target="_blank" class="focus" href="http://www.liangz.org/716.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2020/05/delphi.png" alt="Delphi-获取文件日期、文件大小和绝对路径-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/study/languages/delphi">Delphi<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/716.html" title="Delphi-获取文件日期、文件大小和绝对路径-飘零博客">Delphi-获取文件日期、文件大小和绝对路径</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2020-06-07</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(169)</span><a class="pc" href="http://www.liangz.org/716.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="716"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 昨天把文件的 MD5 获取了，本次获取文件的日期，包括创建时间、修改时间和访问时间，文件的大小和文件存储的绝对路径。在网上找资料测试终于完成这个任务。 路径 GUI仍是一顿拖放，没有设计细胞，只能按照最简单的。布局如下： 文件的绝对路...</p></article><article class="excerpt excerpt-5"><a target="_blank" class="focus" href="http://www.liangz.org/712.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2020/05/delphi.png" alt="Delphi-获取文件MD5 Hash值-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/study/languages/delphi">Delphi<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/712.html" title="Delphi-获取文件MD5 Hash值-飘零博客">Delphi-获取文件MD5 Hash值</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2020-06-06</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(162)</span><a class="pc" href="http://www.liangz.org/712.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="712"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 可能是由于Delphi版本问题，导致有些库没法再Delphi XE6使用，我只能查找资料和实验，还好完成了任务 文件MD5 新建VCL Forms Application，添加三个控件，分别是TOpenDialog， TButton和...</p></article><article class="excerpt excerpt-6"><a target="_blank" class="focus" href="http://www.liangz.org/710.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2020/05/delphi.png" alt="Delphi-获取字符串的MD5 Hash值-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/study/languages/delphi">Delphi<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/710.html" title="Delphi-获取字符串的MD5 Hash值-飘零博客">Delphi-获取字符串的MD5 Hash值</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2020-05-31</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(186)</span><a class="pc" href="http://www.liangz.org/710.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="710"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 上一篇的那个小的idea还在继续实现中，这次来获取Hash值，首先是字符串的Hash值，之后是文件的Hash值。需要一步一步的来。环境同样是Delphi XE6。 获取MD5 获取字符串的MD5 Hash值其实挺简单的，但是由于我对这...</p></article><article class="excerpt excerpt-7"><a target="_blank" class="focus" href="http://www.liangz.org/707.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2020/05/delphi.png" alt="Delphi-创建SQLite数据库-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/study/languages/delphi">Delphi<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/707.html" title="Delphi-创建SQLite数据库-飘零博客">Delphi-创建SQLite数据库</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2020-05-30</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(209)</span><a class="pc" href="http://www.liangz.org/707.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="707"><i class="fa fa-thumbs-o-up"></i>赞(<span>1</span>)</a></p><p class="note">序言 之前因为电脑存的东西太多了，特别是一些PDF电子书，有很多是重复的，占用我的磁盘空间，因此有了一个想法，编写一个小应用，把文件创建日期，文件名，文件的MD5 hash值，文件的路径等存入到SQLite数据库中，然后之后再添加文件的时候...</p></article><article class="excerpt excerpt-8"><a target="_blank" class="focus" href="http://www.liangz.org/704.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2020/04/s-20200430-221109.png" alt="四月随笔-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/everthing/essaylog">随笔日志<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/704.html" title="四月随笔-飘零博客">四月随笔</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2020-04-30</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(202)</span><a class="pc" href="http://www.liangz.org/704.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="704"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 2020年真是多灾多难，因疫情影响，行情很差。一个月前，也是月末最后一天，离开了人生中第一家公司。我以为工作应该会很好找，然而我错了 心路 离职后，我没有放松，因为我知道自己的弱势。 早上正常起床，打开自己的电脑，首先投递了简历，然后...</p></article><article class="excerpt excerpt-9"><a target="_blank" class="focus" href="http://www.liangz.org/702.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2019/07/s-20190715-101348.png" alt="新计划-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/everthing/essaylog">随笔日志<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/702.html" title="新计划-飘零博客">新计划</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2020-03-31</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(242)</span><a class="pc" href="http://www.liangz.org/702.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="702"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 最近一段时间事多，心情烦躁，没怎么更新文章。正好是这个月的最后的几十分钟，做个计划，这也是我思考良久的计划。并乘此机会将这个月的文章补上，O(∩_∩)O哈哈~ 白天 白天呢，我的计划是学习及写自己的项目，顺便投投简历，面试。不能在这段...</p></article><article class="excerpt excerpt-10"><a target="_blank" class="focus" href="http://www.liangz.org/697.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2020/02/s-20200215-143402.png" alt="Win32-遇 error RC2104报错-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/resource/%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88">解决方案<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/697.html" title="Win32-遇 error RC2104报错-飘零博客">Win32-遇 error RC2104报错</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2020-02-15</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(349)</span><a class="pc" href="http://www.liangz.org/697.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="697"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 今天看《Windows PE权威指南》时，测试代码的时候发现有点问题，我用Notepad++编辑的RC资源文件，使用masm的时候一直报错：error RC2104 : undefined keyword or key name，代码...</p></article><article class="excerpt excerpt-11"><a target="_blank" class="focus" href="http://www.liangz.org/694.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2019/12/s-20191216-222939.png" alt="密码学-Base64解码算法Python3实现-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/study/algorithms">Algorithms<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/694.html" title="密码学-Base64解码算法Python3实现-飘零博客">密码学-Base64解码算法Python3实现</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2020-01-12</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(767)</span><a class="pc" href="http://www.liangz.org/694.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="694"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 接上上一篇：密码学-Base64编码算法Python3实现 ，这一篇文章写base64解码算法，同样是使用Python3，Python2已经停止维护了。 base64解码原理 按照编码算法，把它反着进行，就能对其进行解码，一下是个人拙...</p></article><article class="excerpt excerpt-12"><a target="_blank" class="focus" href="http://www.liangz.org/688.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2019/12/s-20191216-222939.png" alt="密码学-Base64编码算法Python3实现-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/study/algorithms">Algorithms<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/688.html" title="密码学-Base64编码算法Python3实现-飘零博客">密码学-Base64编码算法Python3实现</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2019-12-16</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(791)</span><a class="pc" href="http://www.liangz.org/688.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="688"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">前言 前段时间，在看雪看了一篇关于密码学的帖子，把BASE64算法讲的比较清晰，在加上自己对这方面感兴趣，索性就用Python语言实现一番，不过在实现过程中，发现那个帖子有点儿不足，以下我将自己的理解记录下来。基于Python3 BASE6...</p></article><article class="excerpt excerpt-13"><a target="_blank" class="focus" href="http://www.liangz.org/680.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2019/07/s-20190715-101348.png" alt="关于健康-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/everthing">谈天说地<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/680.html" title="关于健康-飘零博客">关于健康</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2019-11-15</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(790)</span><a class="pc" href="http://www.liangz.org/680.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="680"><i class="fa fa-thumbs-o-up"></i>赞(<span>1</span>)</a></p><p class="note">序言 对于健康这个词，只有在自己的身上，才会有意义，一切不关于自身，都是空谈。 健康 从前，我以为自己很健康，直到昨天，突然间的头晕，差点儿摔倒，我才真正关心自己的健康。 晚上6点多，去排队吃饭，站了一会儿，头有点儿晕，等了一会儿，又加重了...</p></article><article class="excerpt excerpt-14"><a target="_blank" class="focus" href="http://www.liangz.org/673.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2017/11/python.png" alt="reStructuredText文档中文表格对齐-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/resource/%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88">解决方案<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/673.html" title="reStructuredText文档中文表格对齐-飘零博客">reStructuredText文档中文表格对齐</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2019-10-29</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(945)</span><a class="pc" href="http://www.liangz.org/673.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="673"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 前段时间，有心将一段时间的积累整理一下，没想到却在用什么整理的问题上纠结了大半天，最终我选择了 Python 的 reStructuredText 标记语言。 reStructuredText 这个轻量级标记语言就不多说了，自我感觉是...</p></article><article class="excerpt excerpt-15"><a target="_blank" class="focus" href="http://www.liangz.org/659.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2017/11/hack.png" alt="[CrackMe] 160个CrackMe之008-Andrénalin.1.exe-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/reverse/crackme">CrackMe<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/659.html" title="[CrackMe] 160个CrackMe之008-Andrénalin.1.exe-飘零博客">[CrackMe] 160个CrackMe之008-Andrénalin.1.exe</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2019-09-15</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(1013)</span><a class="pc" href="http://www.liangz.org/659.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="659"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 柿子还是找软的捏，找了一个一星的题目，算是最简单的了 开始破解 0x00 准备工作 工具：OllyDbg（吾爱破解）、exeinfo PE CrackMe：Andrénalin.1.exe 0x01 查壳 exeinfo PE 工具查...</p></article><article class="excerpt excerpt-16"><a target="_blank" class="focus" href="http://www.liangz.org/652.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2019/05/C.png" alt="反汇编学习-C语言实例解析精粹-实例5字符的输出-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/study/assembly">Assembly<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/652.html" title="反汇编学习-C语言实例解析精粹-实例5字符的输出-飘零博客">反汇编学习-C语言实例解析精粹-实例5字符的输出</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2019-09-04</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(1040)</span><a class="pc" href="http://www.liangz.org/652.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="652"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 环境：Windows XP    VS6.0 C代码 /* 输入字符，输出通过转义字符控制的字符 */ #define _CRT_SECURE_NO_WARNINGS #include &lt;stdio.h&gt; int main...</p></article><article class="excerpt excerpt-17"><a target="_blank" class="focus" href="http://www.liangz.org/648.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2019/08/s-20190827-211513.png" alt="Django: Unable to get repr for <class 'django.db.models.query.QuerySet'> 解决方案-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/study/django">Django<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/648.html" title="Django: Unable to get repr for <class 'django.db.models.query.QuerySet'> 解决方案-飘零博客">Django: Unable to get repr for <class 'django.db.models.query.QuerySet'> 解决方案</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2019-08-27</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(1860)</span><a class="pc" href="http://www.liangz.org/648.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="648"><i class="fa fa-thumbs-o-up"></i>赞(<span>1</span>)</a></p><p class="note">序言 之前写项目的时候遇到一个问题，卡了我几天，还好最终得以解决。问题如下： Unable to get repr for &lt;class &#8216;django.db.models.query.QuerySet&#8217;&gt...</p></article><article class="excerpt excerpt-18"><a target="_blank" class="focus" href="http://www.liangz.org/642.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2017/11/python.png" alt="LeetCode--7.整数反转-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/study/languages/python">Python<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/642.html" title="LeetCode&#8211;7.整数反转-飘零博客">LeetCode&#8211;7.整数反转</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2019-08-03</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(1029)</span><a class="pc" href="http://www.liangz.org/642.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="642"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 最近突然有捡起 LeetCode ，刷起题来。之前下班后随便学点东西，每天过的很是迷茫，根本看不到自己的未来，最近我又捡起自己的爱好，每天练字最少一小时，然后看着自己的毛笔字有进步还是很高兴，时间安排的紧了，才会忘记某些事情。只有沉浸...</p></article><article class="excerpt excerpt-19"><a target="_blank" class="focus" href="http://www.liangz.org/639.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2019/07/s-snmp.png" alt="Linux导入SNMP私有mib库-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/study/linux">Linux<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/639.html" title="Linux导入SNMP私有mib库-飘零博客">Linux导入SNMP私有mib库</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2019-07-31</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(1911)</span><a class="pc" href="http://www.liangz.org/639.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="639"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 因工作需要，需要在Linux中导入公司的SNMP私有库，方便执行自动化。 详情 首先，在Linux中安装SNMP客户端，由于我用的是Ubuntu，因此只需要执行 sudo apt install snmp 。 一般来说，snmp的配置...</p></article><article class="excerpt excerpt-20"><a target="_blank" class="focus" href="http://www.liangz.org/635.html"><img data-src="http://medias.liangz.org/wp-content/uploads/2019/07/s-20190727-174637.png" alt="Jetbrains旗下 IDE 闪退解决方案-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></a><header><a class="cat" href="http://www.liangz.org/sort/resource/%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88">解决方案<i></i></a> <h2><a target="_blank" href="http://www.liangz.org/635.html" title="Jetbrains旗下 IDE 闪退解决方案-飘零博客">Jetbrains旗下 IDE 闪退解决方案</a></h2></header><p class="meta"><time><i class="fa fa-clock-o"></i>2019-07-27</time><span class="author"><i class="fa fa-user"></i><a href="http://www.liangz.org/author/deteriorator">Darker</a></span><span class="pv"><i class="fa fa-eye"></i>阅读(1496)</span><a class="pc" href="http://www.liangz.org/635.html#respond"><i class="fa fa-comments-o"></i>评论(0)</a><a href="javascript:;" etap="like" class="post-like" data-pid="635"><i class="fa fa-thumbs-o-up"></i>赞(<span>0</span>)</a></p><p class="note">序言 本人一直使用的是Jetbrains旗下的Pycharm，用长了，感觉很好用，但我一个穷逼只能用网络的破解方案，本次遇到了一个问题，就是闪退的问题，详情见下方。 详情 我用的 Pycharm 版本是2018.1.6，为何不用最新的？那是...</p></article><div class="pagination"><ul><li class="prev-page"></li><li class="active"><span>1</span></li><li><a href='http://www.liangz.org/page/2'>2</a></li><li><a href='http://www.liangz.org/page/3'>3</a></li><li><a href='http://www.liangz.org/page/4'>4</a></li><li><span> ... </span></li><li class="next-page"><a href="http://www.liangz.org/page/2" >下一页</a></li><li><span>共 6 页</span></li></ul></div>			</div>
+    </div>
+    <div class="sidebar">
+        <div class="widget widget-tops">
+            <ul class="widget-nav">
+                <li class="active">网站公告</li>			<li>会员中心</li>		</ul>
+            <ul class="widget-navcontent">
+                <li class="item item-01 active">
+                    <ul>
+                        <li><time>12-31</time><a target="_blank" href="http://www.liangz.org/427.html">本站开启知识库</a></li><li><time>10-30</time><a target="_blank" href="http://www.liangz.org/333.html">关于本站为何使用城通网盘</a></li><li><time>08-15</time><a target="_blank" href="http://www.liangz.org/282.html">本站域名更换为www.liangz.org</a></li><li><time>06-26</time><a target="_blank" href="http://www.liangz.org/144.html">关于网站搜索bug的通知</a></li><li><time>06-22</time><a target="_blank" href="http://www.liangz.org/88.html">欢迎再次回来！！！</a></li>					</ul>
+                </li>
+                <li class="item item-02">
+                    <dl>
+                        <dt><img src="https://secure.gravatar.com/avatar/ae89116bc2f881a5488ac50bf9b1f8ea?s=100&d=mm" class="avatar avatar-100" height="50" width="50"></dt>
+                        <dd>Darker<span class="text-muted">1930812245@qq.com</span></dd>
+                    </dl>
+                    <ul>
+                        <li><a href="http://www.liangz.org/user#posts/all">我的文章</a></li>
+                        <li><a href="http://www.liangz.org/user#comments">我的评论</a></li>
+                        <li><a href="http://www.liangz.org/user#info">修改资料</a></li>
+                        <li><a href="http://www.liangz.org/user#password">修改密码</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="widget widget_ui_textasb"><a class="style01" href="http://www.liangz.org/" target="_blank"><strong>吐血推荐</strong><h2>欢迎光临</h2><p>本站是一个技术和生活的家园</p></a></div><div class="widget widget_text"><h3>服务器推荐</h3>			<div class="textwidget"><ul>
+        <li>本站架设在 <a href="https://bandwagonhost.com/aff.php?aff=21629" target="_blank" rel="noopener"><span style="color: #ff0000;"><strong>搬瓦工VPS</strong>（BandwagonHOST）</span></a>上面</li>
+        <li>最新优惠码：<strong>BWH26FXH3HIQ &#8211; 6.25%</strong></li>
+    </ul>
+    </div>
+    </div><div class="widget widget_ui_posts"><h3>热门文章</h3><ul><li><a target="_blank" href="http://www.liangz.org/75.html"><span class="thumbnail"><img data-src="http://ww2.sinaimg.cn/large/840a8430jw1f68mbo23png20qv0higz2.jpg" alt="Snipaste--“全球第一多功能截图软件”-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">Snipaste&#8211;“全球第一多功能截图软件”</span><span class="muted">2017-06-22</span><span class="muted">评论(10)</span></a></li>
+        <li><a target="_blank" href="http://www.liangz.org/142.html"><span class="thumbnail"><img data-src="http://media.oldbird.top/wp-content/uploads/2017/06/1.png" alt="简易处理简单的U盘病毒教程-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">简易处理简单的U盘病毒教程</span><span class="muted">2017-06-26</span><span class="muted">评论(9)</span></a></li>
+        <li><a target="_blank" href="http://www.liangz.org/424.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2017/12/s-20171214-230314.png" alt="神器--磁盘目录大小排序软件TreeSize-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">神器&#8211;磁盘目录大小排序软件TreeSize</span><span class="muted">2017-12-14</span><span class="muted">评论(6)</span></a></li>
+        <li><a target="_blank" href="http://www.liangz.org/331.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2017/10/sp_20171029_233702.png" alt="知识管理工具-Mybase-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">知识管理工具-Mybase</span><span class="muted">2017-10-30</span><span class="muted">评论(3)</span></a></li>
+        <li><a target="_blank" href="http://www.liangz.org/245.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2017/06/sp_20170629_194616.png" alt="网站运行时间代码两例-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">网站运行时间代码两例</span><span class="muted">2017-07-10</span><span class="muted">评论(3)</span></a></li>
+        <li><a target="_blank" href="http://www.liangz.org/307.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2017/07/snipaste20170628_233551.png" alt="Python学习之基础练习（1）-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">Python学习之基础练习（1）</span><span class="muted">2017-09-03</span><span class="muted">评论(3)</span></a></li>
+    </ul></div><div class="widget widget_ui_posts"><h3>近期文章</h3><ul><li><a target="_blank" href="http://www.liangz.org/755.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2020/05/delphi.png" alt="Delphi-改进获取文件MD5 Hash方法-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">Delphi-改进获取文件MD5 Hash方法</span><span class="muted">2020-07-26</span><span class="muted">评论(0)</span></a></li>
+        <li><a target="_blank" href="http://www.liangz.org/728.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2020/07/s-20200709-224008.png" alt="使用 Gitea 搭建私有 Git 服务器-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">使用 Gitea 搭建私有 Git 服务器</span><span class="muted">2020-07-09</span><span class="muted">评论(0)</span></a></li>
+        <li><a target="_blank" href="http://www.liangz.org/721.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2020/05/delphi.png" alt="Delphi-解决数据库Text字段显示为(WIDEMEMO)-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">Delphi-解决数据库Text字段显示为(WIDEMEMO)</span><span class="muted">2020-06-14</span><span class="muted">评论(0)</span></a></li>
+        <li><a target="_blank" href="http://www.liangz.org/716.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2020/05/delphi.png" alt="Delphi-获取文件日期、文件大小和绝对路径-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">Delphi-获取文件日期、文件大小和绝对路径</span><span class="muted">2020-06-07</span><span class="muted">评论(0)</span></a></li>
+        <li><a target="_blank" href="http://www.liangz.org/712.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2020/05/delphi.png" alt="Delphi-获取文件MD5 Hash值-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">Delphi-获取文件MD5 Hash值</span><span class="muted">2020-06-06</span><span class="muted">评论(0)</span></a></li>
+        <li><a target="_blank" href="http://www.liangz.org/710.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2020/05/delphi.png" alt="Delphi-获取字符串的MD5 Hash值-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">Delphi-获取字符串的MD5 Hash值</span><span class="muted">2020-05-31</span><span class="muted">评论(0)</span></a></li>
+    </ul></div><div class="widget widget_ui_posts"><h3>猜你喜欢</h3><ul><li><a target="_blank" href="http://www.liangz.org/592.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2019/05/C.png" alt="反汇编学习-C语言实例解析精粹-第一个C程序-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">反汇编学习-C语言实例解析精粹-第一个C程序</span><span class="muted">2019-05-10</span><span class="muted">评论(0)</span></a></li>
+        <li><a target="_blank" href="http://www.liangz.org/604.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2019/05/s-20190520-213212.png" alt="520你怎么过？我对爱情的......-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">520你怎么过？我对爱情的&#8230;&#8230;</span><span class="muted">2019-05-20</span><span class="muted">评论(0)</span></a></li>
+        <li><a target="_blank" href="http://www.liangz.org/275.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2017/08/sp_20170804_212930.png" alt="浅浅的思念  淡淡的伤 | 作者：千寻-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">浅浅的思念  淡淡的伤 | 作者：千寻</span><span class="muted">2017-08-04</span><span class="muted">评论(0)</span></a></li>
+        <li><a target="_blank" href="http://www.liangz.org/688.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2019/12/s-20191216-222939.png" alt="密码学-Base64编码算法Python3实现-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">密码学-Base64编码算法Python3实现</span><span class="muted">2019-12-16</span><span class="muted">评论(0)</span></a></li>
+        <li><a target="_blank" href="http://www.liangz.org/384.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2017/11/Linux.png" alt="折腾Ubuntu服务管理-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">折腾Ubuntu服务管理</span><span class="muted">2017-11-25</span><span class="muted">评论(0)</span></a></li>
+        <li><a target="_blank" href="http://www.liangz.org/566.html"><span class="thumbnail"><img data-src="http://medias.liangz.org/wp-content/uploads/2019/01/s-20190103-223029.png" alt="电子书分享--《Python编程：从入门到实践》-飘零博客" src="http://www.liangz.org/wp-content/themes/dux/img/thumbnail.png" class="thumb"></span><span class="text">电子书分享&#8211;《Python编程：从入门到实践》</span><span class="muted">2019-01-06</span><span class="muted">评论(0)</span></a></li>
+    </ul></div><div class="widget widget_ui_tags"><h3>热门标签</h3><div class="items"><a href="http://www.liangz.org/tags/python">Python (41)</a><a href="http://www.liangz.org/tags/logs">随笔日志 (18)</a><a href="http://www.liangz.org/tags/linux">Linux (13)</a><a href="http://www.liangz.org/tags/windows">Windows (12)</a><a href="http://www.liangz.org/tags/web-build">建站笔记 (9)</a><a href="http://www.liangz.org/tags/software">精品软件 (6)</a><a href="http://www.liangz.org/tags/system">系统安装 (6)</a><a href="http://www.liangz.org/tags/wordpress">WordPress (6)</a><a href="http://www.liangz.org/tags/assembly">Assembly (6)</a><a href="http://www.liangz.org/tags/disassembly">Disassembly (6)</a><a href="http://www.liangz.org/tags/delphi">Delphi (6)</a><a href="http://www.liangz.org/tags/centos">CentOS (5)</a><a href="http://www.liangz.org/tags/crawler">网络爬虫 (5)</a><a href="http://www.liangz.org/tags/c">C (5)</a><a href="http://www.liangz.org/tags/recommend">站长推荐 (4)</a><a href="http://www.liangz.org/tags/notice">网站公告 (4)</a><a href="http://www.liangz.org/tags/ide">IDE (4)</a><a href="http://www.liangz.org/tags/double-system">双系统 (3)</a><a href="http://www.liangz.org/tags/digital-image-processing">数字图像处理 (3)</a><a href="http://www.liangz.org/tags/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0">深度学习 (3)</a><a href="http://www.liangz.org/tags/grub2">grub2 (3)</a><a href="http://www.liangz.org/tags/algorithms">Algorithms (3)</a><a href="http://www.liangz.org/tags/%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88">解决方案 (3)</a><a href="http://www.liangz.org/tags/hash">Hash (3)</a><a href="http://www.liangz.org/tags/help-document">帮助文档 (2)</a><a href="http://www.liangz.org/tags/official-document">官方文档 (2)</a><a href="http://www.liangz.org/tags/php">PHP (2)</a><a href="http://www.liangz.org/tags/keygen">注册机 (2)</a><a href="http://www.liangz.org/tags/source-build">源码编译 (2)</a><a href="http://www.liangz.org/tags/attack-defense">黑客攻防 (2)</a></div></div><div class="widget widget_ui_comments"><h3>最新评论</h3><ul><li><a href="http://www.liangz.org/messageboard/comment-page-1#comment-151" title="留言板上的评论"><img data-src="https://secure.gravatar.com/avatar/739d96aed118412ef6e20a01af3d54b8?s=100&d=mm" class="avatar avatar-100" height="50" width="50"> <strong>Job</strong> 2个月前 (06-02)说：<br>看到下面的链接了，不用了。</a></li><li><a href="http://www.liangz.org/messageboard/comment-page-1#comment-150" title="留言板上的评论"><img data-src="https://secure.gravatar.com/avatar/739d96aed118412ef6e20a01af3d54b8?s=100&d=mm" class="avatar avatar-100" height="50" width="50"> <strong>Job</strong> 2个月前 (06-02)说：<br>博主，opencv的电子书还在吗？麻烦给我邮箱发一份。谢谢！</a></li><li><a href="http://www.liangz.org/messageboard/comment-page-1#comment-149" title="留言板上的评论"><img data-src="https://secure.gravatar.com/avatar/639e9e3b0232709969af744af573a873?s=100&d=mm" class="avatar avatar-100" height="50" width="50"> <strong>老张</strong> 3个月前 (05-07)说：<br>先赞一个吧，做的挺好的！不常来，每次都有不同。</a></li><li><a href="http://www.liangz.org/messageboard/comment-page-1#comment-114" title="留言板上的评论"><img data-src="https://secure.gravatar.com/avatar/40fb135ee95fb0c1c3a5bb2b18945790?s=100&d=mm" class="avatar avatar-100" height="50" width="50"> <strong>hit</strong> 11个月前 (09-01)说：<br>您好，可以再发一下Python——opencv中文版下载连接吗？</a></li><li><a href="http://www.liangz.org/331.html/comment-page-1#comment-110" title="知识管理工具-Mybase上的评论"><img data-src="https://secure.gravatar.com/avatar/7744a667d94a9add1b5de5eaa265af5c?s=100&d=mm" class="avatar avatar-100" height="50" width="50"> <strong>figa</strong> 1年前 (2019-04-11)说：<br>谢谢    感谢博主分享 ，感觉很好用 。</a></li><li><a href="http://www.liangz.org/75.html/comment-page-1#comment-108" title="Snipaste--“全球第一多功能截图软件”上的评论"><img data-src="https://secure.gravatar.com/avatar/8ceaf29cc6b837a0a8fc10a2c5065a19?s=100&d=mm" class="avatar avatar-100" height="50" width="50"> <strong>Snake</strong> 2年前 (2018-12-05)说：<br>一直在使用这个截图软件</a></li><li><a href="http://www.liangz.org/444.html/comment-page-1#comment-106" title="使用grub2制作多重启动盘(上)上的评论"><img data-src="https://secure.gravatar.com/avatar/8ceaf29cc6b837a0a8fc10a2c5065a19?s=100&d=mm" class="avatar avatar-100" height="50" width="50"> <strong>Snake</strong> 2年前 (2018-12-05)说：<br>照着做能做好，谢谢</a></li><li><a href="http://www.liangz.org/331.html/comment-page-1#comment-103" title="知识管理工具-Mybase上的评论"><img data-src="https://secure.gravatar.com/avatar/0dd91156aa7c71aae6ebc64c173564ca?s=100&d=mm" class="avatar avatar-100" height="50" width="50"> <strong>mm</strong> 2年前 (2018-10-03)说：<br>太好用啦，感謝分享！</a></li></ul></div><div class="widget widget_categories"><h3>分类目录</h3>		<ul>
+        <li class="cat-item cat-item-92"><a href="http://www.liangz.org/sort/study/algorithms" >Algorithms</a> (3)
+        </li>
+        <li class="cat-item cat-item-101"><a href="http://www.liangz.org/sort/study/assembly" >Assembly</a> (5)
+        </li>
+        <li class="cat-item cat-item-105"><a href="http://www.liangz.org/sort/study/c-c" >C/C++</a> (3)
+        </li>
+        <li class="cat-item cat-item-97"><a href="http://www.liangz.org/sort/reverse/crackme" >CrackMe</a> (1)
+        </li>
+        <li class="cat-item cat-item-116"><a href="http://www.liangz.org/sort/study/languages/delphi" >Delphi</a> (5)
+        </li>
+        <li class="cat-item cat-item-98"><a href="http://www.liangz.org/sort/reverse/disassembly" >Disassembly</a> (7)
+        </li>
+        <li class="cat-item cat-item-109"><a href="http://www.liangz.org/sort/study/django" >Django</a> (1)
+        </li>
+        <li class="cat-item cat-item-90"><a href="http://www.liangz.org/sort/resource/ebook" >Ebook</a> (3)
+        </li>
+        <li class="cat-item cat-item-60"><a href="http://www.liangz.org/sort/study/linux" >Linux</a> (12)
+        </li>
+        <li class="cat-item cat-item-43"><a href="http://www.liangz.org/sort/study/languages/php" >PHP</a> (2)
+        </li>
+        <li class="cat-item cat-item-39"><a href="http://www.liangz.org/sort/study/languages/python" >Python</a> (31)
+        </li>
+        <li class="cat-item cat-item-44"><a href="http://www.liangz.org/sort/study/windows" >Windows</a> (11)
+        </li>
+        <li class="cat-item cat-item-48"><a href="http://www.liangz.org/sort/study/wordpress" >WordPress</a> (5)
+        </li>
+        <li class="cat-item cat-item-23"><a href="http://www.liangz.org/sort/study" >学无止境</a> (12)
+        </li>
+        <li class="cat-item cat-item-113"><a href="http://www.liangz.org/sort/study/%e5%af%86%e7%a0%81%e5%ad%a6" >密码学</a> (2)
+        </li>
+        <li class="cat-item cat-item-18"><a href="http://www.liangz.org/sort/resource/documents" >文档分享</a> (4)
+        </li>
+        <li class="cat-item cat-item-4"><a href="http://www.liangz.org/sort/recommend" >站长推荐</a> (6)
+        </li>
+        <li class="cat-item cat-item-28"><a href="http://www.liangz.org/sort/study/languages" >编程语言</a> (3)
+        </li>
+        <li class="cat-item cat-item-1"><a href="http://www.liangz.org/sort/notice" >网站公告</a> (5)
+        </li>
+        <li class="cat-item cat-item-106"><a href="http://www.liangz.org/sort/resource/%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88" >解决方案</a> (6)
+        </li>
+        <li class="cat-item cat-item-5"><a href="http://www.liangz.org/sort/everthing" >谈天说地</a> (8)
+        </li>
+        <li class="cat-item cat-item-6"><a href="http://www.liangz.org/sort/resource" >资源分享</a> (3)
+        </li>
+        <li class="cat-item cat-item-7"><a href="http://www.liangz.org/sort/resource/software" >软件分享</a> (6)
+        </li>
+        <li class="cat-item cat-item-96"><a href="http://www.liangz.org/sort/reverse" >逆向工程</a> (2)
+        </li>
+        <li class="cat-item cat-item-12"><a href="http://www.liangz.org/sort/everthing/essaylog" >随笔日志</a> (17)
+        </li>
+        <li class="cat-item cat-item-67"><a href="http://www.liangz.org/sort/study/hack" >黑客技术</a> (2)
+        </li>
+    </ul>
+    </div><div class="widget widget_archive"><h3>文章归档</h3>		<ul>
+        <li><a href='http://www.liangz.org/date/2020/07'>2020年七月</a>&nbsp;(2)</li>
+        <li><a href='http://www.liangz.org/date/2020/06'>2020年六月</a>&nbsp;(3)</li>
+        <li><a href='http://www.liangz.org/date/2020/05'>2020年五月</a>&nbsp;(2)</li>
+        <li><a href='http://www.liangz.org/date/2020/04'>2020年四月</a>&nbsp;(1)</li>
+        <li><a href='http://www.liangz.org/date/2020/03'>2020年三月</a>&nbsp;(1)</li>
+        <li><a href='http://www.liangz.org/date/2020/02'>2020年二月</a>&nbsp;(1)</li>
+        <li><a href='http://www.liangz.org/date/2020/01'>2020年一月</a>&nbsp;(1)</li>
+        <li><a href='http://www.liangz.org/date/2019/12'>2019年十二月</a>&nbsp;(1)</li>
+        <li><a href='http://www.liangz.org/date/2019/11'>2019年十一月</a>&nbsp;(1)</li>
+        <li><a href='http://www.liangz.org/date/2019/10'>2019年十月</a>&nbsp;(1)</li>
+        <li><a href='http://www.liangz.org/date/2019/09'>2019年九月</a>&nbsp;(2)</li>
+        <li><a href='http://www.liangz.org/date/2019/08'>2019年八月</a>&nbsp;(2)</li>
+        <li><a href='http://www.liangz.org/date/2019/07'>2019年七月</a>&nbsp;(3)</li>
+        <li><a href='http://www.liangz.org/date/2019/06'>2019年六月</a>&nbsp;(2)</li>
+        <li><a href='http://www.liangz.org/date/2019/05'>2019年五月</a>&nbsp;(5)</li>
+        <li><a href='http://www.liangz.org/date/2019/04'>2019年四月</a>&nbsp;(1)</li>
+        <li><a href='http://www.liangz.org/date/2019/03'>2019年三月</a>&nbsp;(1)</li>
+        <li><a href='http://www.liangz.org/date/2019/02'>2019年二月</a>&nbsp;(1)</li>
+        <li><a href='http://www.liangz.org/date/2019/01'>2019年一月</a>&nbsp;(3)</li>
+        <li><a href='http://www.liangz.org/date/2018/12'>2018年十二月</a>&nbsp;(1)</li>
+        <li><a href='http://www.liangz.org/date/2018/11'>2018年十一月</a>&nbsp;(2)</li>
+        <li><a href='http://www.liangz.org/date/2018/10'>2018年十月</a>&nbsp;(1)</li>
+        <li><a href='http://www.liangz.org/date/2018/08'>2018年八月</a>&nbsp;(2)</li>
+        <li><a href='http://www.liangz.org/date/2018/07'>2018年七月</a>&nbsp;(2)</li>
+        <li><a href='http://www.liangz.org/date/2018/05'>2018年五月</a>&nbsp;(5)</li>
+        <li><a href='http://www.liangz.org/date/2018/04'>2018年四月</a>&nbsp;(3)</li>
+        <li><a href='http://www.liangz.org/date/2018/03'>2018年三月</a>&nbsp;(1)</li>
+        <li><a href='http://www.liangz.org/date/2018/02'>2018年二月</a>&nbsp;(1)</li>
+        <li><a href='http://www.liangz.org/date/2018/01'>2018年一月</a>&nbsp;(5)</li>
+        <li><a href='http://www.liangz.org/date/2017/12'>2017年十二月</a>&nbsp;(7)</li>
+        <li><a href='http://www.liangz.org/date/2017/11'>2017年十一月</a>&nbsp;(13)</li>
+        <li><a href='http://www.liangz.org/date/2017/10'>2017年十月</a>&nbsp;(3)</li>
+        <li><a href='http://www.liangz.org/date/2017/09'>2017年九月</a>&nbsp;(5)</li>
+        <li><a href='http://www.liangz.org/date/2017/08'>2017年八月</a>&nbsp;(11)</li>
+        <li><a href='http://www.liangz.org/date/2017/07'>2017年七月</a>&nbsp;(9)</li>
+        <li><a href='http://www.liangz.org/date/2017/06'>2017年六月</a>&nbsp;(20)</li>
+    </ul>
+    </div><div class="widget widget_ui_statistics"><h3>站点统计</h3><ul><li><strong>日志总数：</strong>125</li><li><strong>评论总数：</strong>68</li><li><strong>页面总数：</strong>13</li><li><strong>最后更新：</strong>2020-07-26</li></ul></div></div></section>
+<div class="branding branding-black">
+    <div class="container">
+        <h2>欢迎光临</h2>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2017-2020   <a href="http://www.liangz.org">飘零博客</a> &nbsp; 保留所有权利.&nbsp&nbsp&nbsp<a href="http://www.liangz.org/sitemap_index.xml">网站地图</a>&nbsp&nbsp<a href="mailto:Darker@liangz.org" target="_blank">联系我</a><br/><br/><a href="http://www.miitbeian.gov.cn/">豫ICP备17004059号-2</a>&nbsp&nbsp&nbsp<a href="http://webscan.360.cn/index/checkwebsite/url/www.liangz.org" name="8a944173b40e4ac482e6322341f82110" >360网站安全检测平台</a><br/><br/><span id="sitetime"></span>
+            <script language=javascript>
+                function siteTime(){
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000
+                    var minutes = seconds * 60
+                    var hours = minutes * 60
+                    var days = hours * 24
+                    var years = days * 365
+                    var today = new Date()
+                    var todayYear = today.getFullYear()
+                    var todayMonth = today.getMonth()
+                    var todayDate = today.getDate()
+                    var todayHour = today.getHours()
+                    var todayMinute = today.getMinutes()
+                    var todaySecond = today.getSeconds()
+
+                    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+                    year - 作为date对象的年份，为4位年份值
+                    month - 0-11之间的整数，做为date对象的月份    特别注意
+                    day - 1-31之间的整数，做为date对象的天数
+                    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+                    minutes - 0-59之间的整数，做为date对象的分钟数
+                    seconds - 0-59之间的整数，做为date对象的秒数
+                    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+                    var t1 = Date.UTC(2017,1,14,00,00,00)  <!--注意：月份是0-11,所以需要把建站月份减一-->
+                    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond)
+                    var diff = t2-t1
+
+                    var diffYears = Math.floor(diff/years)
+                    var diffDays = Math.floor((diff/days)-diffYears*365)
+                    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours)
+                    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes)
+                    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds)
+                    document.getElementById("sitetime").innerHTML="本站安全运行 "+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒"
+                    siteTime()
+            </script></p>
+        <span id="sitetime"></span>
+        <script language=javascript>
+            function siteTime(){
+                window.setTimeout("siteTime()", 1000);
+                var seconds = 1000
+                var minutes = seconds * 60
+                var hours = minutes * 60
+                var days = hours * 24
+                var years = days * 365
+                var today = new Date()
+                var todayYear = today.getFullYear()
+                var todayMonth = today.getMonth()
+                var todayDate = today.getDate()
+                var todayHour = today.getHours()
+                var todayMinute = today.getMinutes()
+                var todaySecond = today.getSeconds()
+
+                /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+                year - 作为date对象的年份，为4位年份值
+                month - 0-11之间的整数，做为date对象的月份    特别注意
+                day - 1-31之间的整数，做为date对象的天数
+                hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+                minutes - 0-59之间的整数，做为date对象的分钟数
+                seconds - 0-59之间的整数，做为date对象的秒数
+                microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+                var t1 = Date.UTC(2017,1,14,00,00,00)  <!--注意：月份是0-11,所以需要把建站月份减一-->
+                var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond)
+                var diff = t2-t1
+
+                var diffYears = Math.floor(diff/years)
+                var diffDays = Math.floor((diff/days)-diffYears*365)
+                var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours)
+                var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes)
+                var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*	minutes)/seconds)
+                document.getElementById("sitetime").innerHTML="本站勉强运行 "+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒"
+            }
+            siteTime()
+        </script><br/><span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span><script>// <![CDATA[
+    var now = new Date();
+    function createtime(){ var grt= new Date("02/14/2017 00:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站始于2017年2月14日，勉强运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; }
+    setInterval("createtime()",250);
+    // ]]></script><br/><br/><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1263549358'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263549358%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>	</div>
+</footer>
+
+
+<div class="rollbar rollbar-rb"><ul><li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1930812245&site=qq&menu=yes"><i class="fa fa-qq"></i><span>QQ咨询</span></a><h6>QQ咨询<i></i></h6></li><li class="rollbar-totop"><a href="javascript:(jsui.scrollTo());"><i class="fa fa-angle-up"></i><span>回顶</span></a><h6>回顶部<i></i></h6></li></ul></div>
+<script>
+    window.jsui={
+        www: 'http://www.liangz.org',
+        uri: 'http://www.liangz.org/wp-content/themes/dux',
+        ver: '5.2',
+        roll: ["1","2"],
+        ajaxpager: '0',
+        url_rp: 'http://www.liangz.org/resetpwd'
+    };
+</script>
+
+<!-- 复制内容弹窗版权提醒 -->
+<script type="text/javascript">
+    document.body.oncopy=function(){alert("复制成功！撰文不易，转载请务必保留原文链接，谢谢合作！");}
+</script>
+
+<script type="text/javascript">
+    len = $(".widget_ui_tags .items a").length - 1;
+    $(".widget_ui_tags .items a").each(function(i) {
+        var let = new Array( '27ea80','3366FF','ff5473','df27ea', '31ac76', 'ea4563', '31a6a0', '8e7daa', '4fad7b', 'f99f13', 'f85200', '666666');
+        var random1 = Math.floor(Math.random() * 12) + 0;
+        var num = Math.floor(Math.random() * 5 + 12);
+        $(this).attr('style', 'background:#' + let[random1] + '; opacity: 0.6;'+'');
+        if ($(this).next().length > 0) {
+            last = $(this).next().position().left
+        }
+    });
+</script>
+{#<!-- 评论框礼花绽放效果-->#}
+{#<script src="http://www.liangz.org/wp-content/themes/dux/diy/activate-power-mode.js "></script>#}
+{#<script>#}
+{#    POWERMODE.colorful = true; // ture 为启用礼花特效#}
+{#    POWERMODE.shake = false; // false 为禁用震动特效#}
+{#    document.body.addEventListener('input', POWERMODE);#}
+{#</script>#}
+
+<script type='text/javascript' src="{{ url_for('static', filename='js/libs/bootstrap.min.js') }}"></script>
+<script type='text/javascript' src="{{ url_for('static', filename='js/loader.js') }}"></script>
+<script type='text/javascript' src="{{ url_for('static', filename='js/wp-embed.min.js') }}"></script>
 </body>
 </html>
