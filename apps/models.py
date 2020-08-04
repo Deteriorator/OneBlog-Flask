@@ -134,6 +134,9 @@ class Post(db.Model):
                                server_default=db.FetchedValue())
     comment_count = db.Column(db.BigInteger, nullable=False, server_default=db.FetchedValue())
 
+    def article_info(self, id):
+        pass
+
 
 class TermRelationship(db.Model):
     __tablename__ = 'wp_term_relationships'

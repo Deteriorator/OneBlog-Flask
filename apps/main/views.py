@@ -11,7 +11,7 @@
 -------------------------------------------------------------------------------
 """
 from flask import render_template
-from apps.models import Post
+from apps.models import Post, User
 from apps.main import main
 
 
@@ -19,3 +19,11 @@ from apps.main import main
 def home():
     articles = Post.query.filter_by(post_type='page').first()
     return render_template('base.html', article=articles.post_title)
+
+
+@main.route('/<id>')
+def article(id):
+    article = Post.query.filter_by(ID=id).first()
+    author = User
+    # print(article[0].post_title)
+    return render_template('article-detail.html', article=article)
