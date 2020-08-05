@@ -20,12 +20,10 @@ db = SQLAlchemy()
 
 
 def create_app():
-    application = Flask(__name__)
+    application = Flask(__name__)  # , template_folder='apps/templates')
     configure_app(application)
     db.init_app(application)
     application.register_blueprint(main)
-    print(application.register_blueprint(main))
-
     return application
 
 

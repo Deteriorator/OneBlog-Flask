@@ -10,7 +10,7 @@
    @Change:   2020.07.31
 -------------------------------------------------------------------------------
 """
-from app import create_app
+from apps.app import create_app
 from config import Config
 
 app = create_app()

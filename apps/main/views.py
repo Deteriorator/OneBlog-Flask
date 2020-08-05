@@ -10,11 +10,21 @@
    @Change:   2020.08.02
 -------------------------------------------------------------------------------
 """
-from flask import Blueprint
-
-main = Blueprint('main', __name__)
+from flask import render_template
+from apps.models import Post, User
+from apps.main import main
 
 
 @main.route('/')
 def home():
-    return '<h1>Hello World!</h1>'
+    articles = Post.query.filter_by(post_type='page').first()
+    return render_template('base.html', article=articles.post_title)
+
+
+@main.route('/<id>')
+def article(id):
+    article = Post.query.filter_by(ID=id).first()
+    author = User
+    print(article.article_category)
+    # print(article[0].post_title)
+    return render_template('article-detail.html', article=article)

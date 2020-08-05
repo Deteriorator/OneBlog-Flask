@@ -134,6 +134,19 @@ class Post(db.Model):
                                server_default=db.FetchedValue())
     comment_count = db.Column(db.BigInteger, nullable=False, server_default=db.FetchedValue())
 
+    @property
+    def article_category(self):
+        """
+        :return: return article's categories list
+        """
+        categories = TermRelationship.query.filter_by(object_id=self.ID).all()
+        result = []
+        for category in categories:
+            term_taxonomy = TermTaxonomy.query.get(category.term_taxonomy_id)
+            if term_taxonomy.taxonomy == 'category':
+                result.append(Term.query.get(term_taxonomy.term_id).name)
+        return result
+
 
 class TermRelationship(db.Model):
     __tablename__ = 'wp_term_relationships'
@@ -143,6 +156,13 @@ class TermRelationship(db.Model):
     term_taxonomy_id = db.Column(db.BigInteger, primary_key=True, nullable=False, index=True,
                                  server_default=db.FetchedValue())
     term_order = db.Column(db.Integer, nullable=False, server_default=db.FetchedValue())
+
+    @property
+    def taxonomy(self):
+        """
+        :return: return taxonomy: tag or category
+        """
+        return TermTaxonomy.query.get(self.term_taxonomy_id).taxonomy
 
 
 class TermTaxonomy(db.Model):
@@ -158,6 +178,20 @@ class TermTaxonomy(db.Model):
     description = db.Column(db.String(collation='utf8mb4_unicode_ci'), nullable=False)
     parent = db.Column(db.BigInteger, nullable=False, server_default=db.FetchedValue())
     count = db.Column(db.BigInteger, nullable=False, server_default=db.FetchedValue())
+
+    @property
+    def get_parent(self):
+        """
+        :return: return parent's taxonomy and name if has parent
+        """
+        if self.parent == 0:
+            return 'Has no parent!'
+        else:
+            result = dict()
+            parent_obj = TermTaxonomy.query.filter_by(term_id=self.parent).first()
+            result['taxonomy'] = parent_obj.taxonomy
+            result['name'] = Term.query.get(self.parent).name
+            return result
 
 
 class Termmeta(db.Model):
