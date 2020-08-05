@@ -136,6 +136,9 @@ class Post(db.Model):
 
     @property
     def article_category(self):
+        """
+        :return: return article's categories list
+        """
         categories = TermRelationship.query.filter_by(object_id=self.ID).all()
         result = []
         for category in categories:
@@ -153,6 +156,13 @@ class TermRelationship(db.Model):
     term_taxonomy_id = db.Column(db.BigInteger, primary_key=True, nullable=False, index=True,
                                  server_default=db.FetchedValue())
     term_order = db.Column(db.Integer, nullable=False, server_default=db.FetchedValue())
+
+    @property
+    def taxonomy(self):
+        """
+        :return: return taxonomy: tag or category
+        """
+        return TermTaxonomy.query.get(self.term_taxonomy_id).taxonomy
 
 
 class TermTaxonomy(db.Model):
