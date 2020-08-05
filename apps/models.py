@@ -179,6 +179,20 @@ class TermTaxonomy(db.Model):
     parent = db.Column(db.BigInteger, nullable=False, server_default=db.FetchedValue())
     count = db.Column(db.BigInteger, nullable=False, server_default=db.FetchedValue())
 
+    @property
+    def get_parent(self):
+        """
+        :return: return parent's taxonomy and name if has parent
+        """
+        if self.parent == 0:
+            return 'Has no parent!'
+        else:
+            result = dict()
+            parent_obj = TermTaxonomy.query.filter_by(term_id=self.parent).first()
+            result['taxonomy'] = parent_obj.taxonomy
+            result['name'] = Term.query.get(self.parent).name
+            return result
+
 
 class Termmeta(db.Model):
     __tablename__ = 'wp_termmeta'
