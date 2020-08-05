@@ -25,5 +25,6 @@ def home():
 def article(id):
     article = Post.query.filter_by(ID=id).first()
     author = User
+    print(article.article_category)
     # print(article[0].post_title)
     return render_template('article-detail.html', article=article)

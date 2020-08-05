@@ -134,8 +134,15 @@ class Post(db.Model):
                                server_default=db.FetchedValue())
     comment_count = db.Column(db.BigInteger, nullable=False, server_default=db.FetchedValue())
 
-    def article_info(self, id):
-        pass
+    @property
+    def article_category(self):
+        categories = TermRelationship.query.filter_by(object_id=self.ID).all()
+        result = []
+        for category in categories:
+            term_taxonomy = TermTaxonomy.query.get(category.term_taxonomy_id)
+            if term_taxonomy.taxonomy == 'category':
+                result.append(Term.query.get(term_taxonomy.term_id).name)
+        return result
 
 
 class TermRelationship(db.Model):
