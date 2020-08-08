@@ -15,6 +15,7 @@ from flask import Flask
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from apps.main.views import main
+from flask_admin import Admin
 
 db = SQLAlchemy()
 
@@ -22,6 +23,7 @@ db = SQLAlchemy()
 def create_app():
     application = Flask(__name__)  # , template_folder='apps/templates')
     configure_app(application)
+    admin = Admin(application, name=u'后台管理系统', template_mode='bootstrap3')
     db.init_app(application)
     application.register_blueprint(main)
     return application
