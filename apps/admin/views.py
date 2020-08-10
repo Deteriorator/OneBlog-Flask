@@ -12,14 +12,17 @@
 """
 from flask_admin import Admin, BaseView, expose
 from flask_admin.contrib.sqla.view import ModelView
+from apps.models import User
 
 
 class MyView(ModelView):
+    # Disable model creation
+    can_create = False
 
-    @expose('/')
-    def home(self):
-        return self.render('index.html')
+    # Override displayed fields
+    column_list = ('user_login', 'user_email', 'user_nicename', 'display_name', 'user_registered')
 
-    @expose('/index')
-    def index(self):
-        return self.render('admin/index.html')
+    def __init__(self, session, **kwargs):
+        # You can pass name and other parameters if you want to
+        super(MyView, self).__init__(User, session, **kwargs)
+

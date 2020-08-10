@@ -37,6 +37,6 @@ def configure_app(app, config=Config):
 
 def management(app):
     manage = Admin(app, name=u'后台管理系统', template_mode='bootstrap3')
-    manage.add_view(MyView(User, db.session, name='用户管理'))
+    manage.add_view(MyView(db.session, name='用户管理'))
     return manage
 
