@@ -23,8 +23,8 @@ def home():
 
 @main.route('/<id>')
 def article(id):
-    article = Post.query.filter_by(ID=id).first()
-    author = User
-    print(article.article_category)
-    # print(article[0].post_title)
-    return render_template('article-detail.html', article=article)
+    article = Post.query.get(id)
+    if article:
+        return render_template('article-detail.html', article=article)
+    else:
+        return '404'
