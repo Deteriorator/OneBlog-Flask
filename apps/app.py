@@ -16,7 +16,7 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from apps.main.views import main
 from flask_admin import Admin, BaseView
-from apps.admin.views import MyView
+from apps.admin.views import MyView, MyView2
 from apps.models import User, Post
 
 db = SQLAlchemy()
@@ -38,5 +38,6 @@ def configure_app(app, config=Config):
 def management(app):
     manage = Admin(app, name=u'后台管理系统', template_mode='bootstrap3')
     manage.add_view(MyView(db.session, name='用户管理'))
+    manage.add_view(MyView2(Post, db.session, name='test'))
     return manage
 

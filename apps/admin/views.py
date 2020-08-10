@@ -16,13 +16,19 @@ from apps.models import User
 
 
 class MyView(ModelView):
-    # Disable model creation
+    # # Disable model creation
     can_create = False
-
-    # Override displayed fields
+    #
+    # # Override displayed fields
     column_list = ('user_login', 'user_email', 'user_nicename', 'display_name', 'user_registered')
-
+    #
     def __init__(self, session, **kwargs):
         # You can pass name and other parameters if you want to
         super(MyView, self).__init__(User, session, **kwargs)
 
+
+class MyView2(ModelView):
+
+    @expose('/')
+    def index(self):
+        return self.render('admin/index.html')
