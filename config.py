@@ -19,3 +19,4 @@ class Config:
 
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     SQLALCHEMY_COMMIT_TEARDOWN = True
+    SECRET_KEY = os.urandom(24)
