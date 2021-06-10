@@ -1,5 +1,6 @@
 # coding: utf-8
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 db = SQLAlchemy()
 
@@ -96,43 +97,122 @@ class Postmeta(db.Model):
 
 class Post(db.Model):
     __tablename__ = 'wp_posts'
+
     __table_args__ = (
         db.Index('type_status_date', 'post_type', 'post_status', 'post_date', 'ID'),
     )
 
-    ID = db.Column(db.BigInteger, primary_key=True)
-    post_author = db.Column(db.BigInteger, nullable=False, index=True,
-                            server_default=db.FetchedValue())
-    post_date = db.Column(db.DateTime, nullable=False, server_default=db.FetchedValue())
-    post_date_gmt = db.Column(db.DateTime, nullable=False, server_default=db.FetchedValue())
-    post_content = db.Column(db.String(collation='utf8mb4_unicode_ci'), nullable=False)
-    post_title = db.Column(db.Text(collation='utf8mb4_unicode_ci'), nullable=False)
-    post_excerpt = db.Column(db.Text(collation='utf8mb4_unicode_ci'), nullable=False)
-    post_status = db.Column(db.String(20, 'utf8mb4_unicode_ci'), nullable=False,
-                            server_default=db.FetchedValue())
-    comment_status = db.Column(db.String(20, 'utf8mb4_unicode_ci'), nullable=False,
-                               server_default=db.FetchedValue())
-    ping_status = db.Column(db.String(20, 'utf8mb4_unicode_ci'), nullable=False,
-                            server_default=db.FetchedValue())
-    post_password = db.Column(db.String(255, 'utf8mb4_unicode_ci'), nullable=False,
-                              server_default=db.FetchedValue())
-    post_name = db.Column(db.String(200, 'utf8mb4_unicode_ci'), nullable=False, index=True,
-                          server_default=db.FetchedValue())
-    to_ping = db.Column(db.Text(collation='utf8mb4_unicode_ci'), nullable=False)
-    pinged = db.Column(db.Text(collation='utf8mb4_unicode_ci'), nullable=False)
-    post_modified = db.Column(db.DateTime, nullable=False, server_default=db.FetchedValue())
-    post_modified_gmt = db.Column(db.DateTime, nullable=False, server_default=db.FetchedValue())
-    post_content_filtered = db.Column(db.String(collation='utf8mb4_unicode_ci'), nullable=False)
-    post_parent = db.Column(db.BigInteger, nullable=False, index=True,
-                            server_default=db.FetchedValue())
-    guid = db.Column(db.String(255, 'utf8mb4_unicode_ci'), nullable=False,
-                     server_default=db.FetchedValue())
-    menu_order = db.Column(db.Integer, nullable=False, server_default=db.FetchedValue())
-    post_type = db.Column(db.String(20, 'utf8mb4_unicode_ci'), nullable=False,
-                          server_default=db.FetchedValue())
-    post_mime_type = db.Column(db.String(100, 'utf8mb4_unicode_ci'), nullable=False,
-                               server_default=db.FetchedValue())
-    comment_count = db.Column(db.BigInteger, nullable=False, server_default=db.FetchedValue())
+    ID = db.Column(
+        db.BigInteger,
+        primary_key=True
+    )
+    post_author = db.Column(
+        db.BigInteger,
+        nullable=False,
+        index=True,
+        server_default=db.FetchedValue()
+    )
+    post_date = db.Column(
+        db.DateTime,
+        default=datetime.utcnow,
+        nullable=False,
+        server_default=db.FetchedValue()
+    )
+    post_date_gmt = db.Column(
+        db.DateTime,
+        nullable=False,
+        server_default=db.FetchedValue()
+    )
+    post_content = db.Column(
+        db.String(collation='utf8mb4_unicode_ci'),
+        nullable=False
+    )
+    post_title = db.Column(
+        db.Text(collation='utf8mb4_unicode_ci'),
+        nullable=False
+    )
+    post_excerpt = db.Column(
+        db.Text(collation='utf8mb4_unicode_ci'),
+        nullable=False
+    )
+    post_status = db.Column(
+        db.String(20, 'utf8mb4_unicode_ci'),
+        nullable=False,
+        server_default=db.FetchedValue()
+    )
+    comment_status = db.Column(
+        db.String(20, 'utf8mb4_unicode_ci'),
+        nullable=False,
+        server_default=db.FetchedValue()
+    )
+    ping_status = db.Column(
+        db.String(20, 'utf8mb4_unicode_ci'),
+        nullable=False,
+        server_default=db.FetchedValue()
+    )
+    post_password = db.Column(
+        db.String(255, 'utf8mb4_unicode_ci'),
+        nullable=False,
+        server_default=db.FetchedValue()
+    )
+    post_name = db.Column(
+        db.String(200, 'utf8mb4_unicode_ci'),
+        nullable=False, index=True,
+        server_default=db.FetchedValue()
+    )
+    to_ping = db.Column(
+        db.Text(collation='utf8mb4_unicode_ci'),
+        nullable=False
+    )
+    pinged = db.Column(
+        db.Text(collation='utf8mb4_unicode_ci'),
+        nullable=False
+    )
+    post_modified = db.Column(
+        db.DateTime,
+        nullable=False,
+        server_default=db.FetchedValue()
+    )
+    post_modified_gmt = db.Column(
+        db.DateTime,
+        nullable=False,
+        server_default=db.FetchedValue()
+    )
+    post_content_filtered = db.Column(
+        db.String(collation='utf8mb4_unicode_ci'),
+        nullable=False
+    )
+    post_parent = db.Column(
+        db.BigInteger,
+        nullable=False,
+        index=True,
+        server_default=db.FetchedValue()
+    )
+    guid = db.Column(
+        db.String(255, 'utf8mb4_unicode_ci'),
+        nullable=False,
+        server_default=db.FetchedValue()
+    )
+    menu_order = db.Column(
+        db.Integer,
+        nullable=False,
+        server_default=db.FetchedValue()
+    )
+    post_type = db.Column(
+        db.String(20, 'utf8mb4_unicode_ci'),
+        nullable=False,
+        server_default=db.FetchedValue()
+    )
+    post_mime_type = db.Column(
+        db.String(100, 'utf8mb4_unicode_ci'),
+        nullable=False,
+        server_default=db.FetchedValue()
+    )
+    comment_count = db.Column(
+        db.BigInteger,
+        nullable=False,
+        server_default=db.FetchedValue()
+    )
 
     @property
     def article_category(self):
@@ -147,6 +227,33 @@ class Post(db.Model):
                 result.append(Term.query.get(term_taxonomy.term_id).name)
         return result
 
+    @property
+    def post_thumbnail(self):
+        """ get thumbnail photo's url """
+        if self.post_type == 'post' and self.post_status == 'publish':
+            _thumbnail_id = Postmeta.query.filter_by(
+                post_id=self.ID, meta_key='_thumbnail_id'
+            ).first()
+            return Post.query.get(_thumbnail_id.meta_value).guid
+
+    @property
+    def post_views(self):
+        """ get post's view number """
+        if self.post_type == 'post' and self.post_status == 'publish':
+            _thumbnail_id = Postmeta.query.filter_by(
+                post_id=self.ID, meta_key='views'
+            ).first()
+            return _thumbnail_id.meta_value
+
+    @property
+    def article_author(self):
+        """ get post author's display name """
+        return User.query.get(self.post_author).display_name
+
+    @property
+    def nicename(self):
+        """ get post author's real name """
+        return User.query.get(self.post_author).user_nicename
 
 class TermRelationship(db.Model):
     __tablename__ = 'wp_term_relationships'
